@@ -12,7 +12,7 @@ end
 add_requires("levilamina")
 add_requires("levibuildscript")
 add_requires("gmlib")
-add_requires("ilistenattentivel0")
+add_requires("ilistenattentively")
 
 target("Cleaner") -- Change this to your mod name.
     add_cxflags(
