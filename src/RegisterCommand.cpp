@@ -1,6 +1,10 @@
 #include "Features/Cleaner.h"
 #include "gmlib/mc/world/Level.h"
 #include "gmlib/gm/data/TpsStatus.h"
+#include "ll/api/command/Command.h"
+#include "ll/api/command/CommandRegistrar.h"
+#include "mc/server/commands/CommandOrigin.h"
+#include "mc/server/commands/CommandOutput.h"
 struct CleanerParam {
     enum class Despawn { despawn } despawn;
     enum class Action { tps, clean, reload, mspt } action;
@@ -74,7 +78,7 @@ void RegCleanerCommand() {
 };
 
 void RegVoteCommand() {
-    auto& cmd = ll::command::CommandRegistrar::getInstance(false).getOrCreateCommand(
+    auto& cmd = ll::command::CommandRegistrar::getInstance().getOrCreateCommand(
         Cleaner::Entry::getInstance().getConfig().VoteClean.VoteCleanCommand,
         tr("cleaner.command.voteclean"),
         CommandPermissionLevel::Any
