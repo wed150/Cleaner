@@ -9,7 +9,7 @@ if not has_config("vs_runtime") then
 end
 
 -- Option 1: Use the latest version of LeviLamina released on GitHub.
-add_requires("levilamina")
+add_requires("levilamina", {configs = {target_type = "server"}})
 add_requires("levibuildscript")
 add_requires("gmlib")
 add_requires("ilistenattentively")
