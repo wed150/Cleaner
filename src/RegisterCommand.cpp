@@ -78,7 +78,7 @@ void RegCleanerCommand() {
 };
 
 void RegVoteCommand() {
-    auto& cmd = ll::command::CommandRegistrar::getInstance().getOrCreateCommand(
+    auto& cmd = ll::command::CommandRegistrar::getInstance(false).getOrCreateCommand(
         Cleaner::Entry::getInstance().getConfig().VoteClean.VoteCleanCommand,
         tr("cleaner.command.voteclean"),
         CommandPermissionLevel::Any
